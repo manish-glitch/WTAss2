@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storing Data Locally</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script defer="true" type="text/javascript">
+		//var entry=document.getElementById("entry");
+		//entry.addEventListener("click",displayEntry);
+		
+
+		var row=1;
+		function displayEntry() {
+			var fn=document.getElementById("fname").value;
+			var mn=document.getElementById("mname").value;
+			var ln=document.getElementById("lname").value;
+			var email=document.getElementById("email_id").value;
+			var message=document.getElementById("msg").value;	
+			if (!fn || !mn || !ln || !email || !message) {
+				alert('Please fill all details');
+				return;
+			}
+			var disp=document.getElementById("display");
+			var newrow=disp.insertRow(row);
+			var cell1=newrow.insertCell(0);
+			var cell2=newrow.insertCell(1);
+			var cell3=newrow.insertCell(2);
+			var cell4=newrow.insertCell(3);
+			var cell5=newrow.insertCell(4);
+
+			cell1.innerHTML=fn;
+			cell2.innerHTML=mn;
+			cell3.innerHTML=ln;
+			cell4.innerHTML=email;
+			cell5.innerHTML=message;
+
+			row++;
+		}
+	/*var stud=[];
+	var data={};
+	var d=document.querySelector('.container');
+	function store() {
+		var fn=document.getElementById("fname").value;
+		var mn=document.getElementById("mname").value;
+		var ln=document.getElementById("lname").value;
+		var email=document.getElementById("email_id").value;
+		var message=document.getElementById("msg").value;
+		
+			data.First_Name=fn;
+			data.Middle_Name=mn;
+			data.Last_Name=ln;
+			data.Email_id=email;
+			data.Message=message;
+			stud.push(data);
+		//alert(fn);
+		//console.log(data);
+		//var d=document.querySelector('.container');s
+		console.log(stud.length);
+		fname.value="";
+		mname.value="";
+		lname.value="";
+		email_id.value="";
+		msg.value="";
+		console.log(stud);
+	}
+	function Nodata()
+	{
+		if (stud.length < 0) {
+			d.innerHTML = "<h1> No Data </h1>"; 
+		}
+		else
+		{	
+			for(var i=0;i<stud.length;i++)
+			{
+				document.write=stud[i].First_Name;	
+			}
+			/*for (var i = 0; i<=data.length; i++) {
+			d.innerHTML= "<table> <th>Name</th> <th>Middle_Name</th><th>Last_Name</th><th>Email</th><th>Message</th> ";
+			d.innerHTML="<tr><td>"+data.First_Name+"</td></tr><tr><td>"+data.Middle_Name+"</td></tr><tr><td>"+data.Last_Name+"</td></tr><tr><td>"+data.Email_id+"</td></tr><tr><td>"+data.Message+"</td></tr></table>";
+			}
+			
+		}
+	}*/
+</script>
+</head>
+<body>
+
+	First_Name:<input type="text" id="fname"><br>
+	Middle_Name:<input type="text" id="mname"><br>
+	Last_Name:<input type="text" id="lname"><br>
+	Email_id:<input type="email" id="email_id"><br>
+	Message:
+	<textarea id="msg" rows="5" cols="20"></textarea><br>
+	<button id="entry" onclick="displayEntry()">Submit</button>
+
+<div class="container">
+	<div class="table-responsive">
+	<table id="display" class="table">
+		<tr>
+			<th>First_Name</th>
+			<th>Middle_Name</th>
+			<th>Last_Name</th>
+			<th>Email_id</th>
+			<th>Message</th>
+		</tr>
+	</table>
+	</div>
+</div>
+
+</body>
+</html>
